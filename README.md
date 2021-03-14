@@ -1,2 +1,2 @@
 # EDUC-PEN-API-GATEWAY
-API gateway for Ministry of Education
+API gateway for Ministry of Education PEN Team
