@@ -49,7 +49,7 @@ FLB_CONFIG="[SERVICE]
 
 echo
 echo Creating config map $APP_NAME-config-map
-oc create -n $OPENSHIFT_NAMESPACE-$envValue configmap $APP_NAME-config-map --from-literal=TZ=$TZVALUE  --from-literal=SPRING_WEB_LOG_LEVEL=INFO --from-literal=APP_LOG_LEVEL=INFO  --from-literal=SPRING_SHOW_REQUEST_DETAILS=false --from-literal=TOKEN_ISSUER_URL="https://$SOAM_KC/auth/realms/$SOAM_KC_REALM_ID" --from-literal=URL_API_STUDENT_V1="http://student-api-$COMMON_NAMESPACE-$envValue.svc.cluster.local:8080/api/v1/student" --dry-run -o yaml | oc apply -f -
+oc create -n "$PEN_NAMESPACE"-"$envValue" configmap $APP_NAME-config-map --from-literal=TZ=$TZVALUE  --from-literal=SPRING_WEB_LOG_LEVEL=INFO --from-literal=APP_LOG_LEVEL=INFO  --from-literal=SPRING_SHOW_REQUEST_DETAILS=false --from-literal=TOKEN_ISSUER_URL="https://$SOAM_KC/auth/realms/$SOAM_KC_REALM_ID" --from-literal=URL_API_STUDENT_V1="http://student-api-$COMMON_NAMESPACE-$envValue.svc.cluster.local:8080/api/v1/student" --dry-run -o yaml | oc apply -f -
 echo
 echo Setting environment variables for $APP_NAME-$SOAM_KC_REALM_ID application
 oc project $OPENSHIFT_NAMESPACE-$envValue
