@@ -1,2 +1,2 @@
-# EDUC-API-GATEWAY
+# EDUC-PEN-API-GATEWAY
 API gateway for Ministry of Education
