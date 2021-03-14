@@ -9,7 +9,7 @@ pipeline{
       TOOLS = "${NAMESPACE}-tools"
       DEV = "${NAMESPACE}-dev"
 
-      APP_NAME = 'api-gateway'
+      APP_NAME = 'pen-api-gateway'
       REPO_NAME = "educ-${APP_NAME}"
       OWNER = 'bcgov'
       JOB_NAME = 'main'
