@@ -9,7 +9,7 @@ KCADM_FILE_BIN_FOLDER="/tmp/keycloak-9.0.3/bin"
 SOAM_KC=soam-$envValue.apps.silver.devops.gov.bc.ca
 
 oc project $PEN_NAMESPACE-$envValue
-SPLUNK_TOKEN=$(oc -o json get configmaps "${APP_NAME}"-"${envValue}"-setup-config | sed -n "s/.*\"SPLUNK_TOKEN_${APP_NAME_UPPER}\": \"\(.*\)\",/\1/p")
+SPLUNK_TOKEN=$(oc -o json get configmaps "${APP_NAME}"-"${envValue}"-setup-config | sed -n "s/.*\"SPLUNK_TOKEN_${APP_NAME_UPPER}\": \"\(.*\)\"/\1/p")
 NATS_CLUSTER=educ_nats_cluster
 NATS_URL="nats://nats.${COMMON_NAMESPACE}-${envValue}.svc.cluster.local:4222"
 oc project $PEN_NAMESPACE-tools
