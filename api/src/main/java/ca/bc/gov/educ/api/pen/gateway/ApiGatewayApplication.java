@@ -44,7 +44,7 @@ public class ApiGatewayApplication {
     log.info("building routes");
     return builder.routes()
         .route("student_api_v1_route", r -> r
-            .host("*").and().path("/api/v1/student/**")
+            .path("/api/v1/student/**")
             .filters(f ->
                 f.requestRateLimiter(c -> c.setRateLimiter(redisRateLimiter)))
             .uri(applicationProperties.getStudentAPIURLV1()))
