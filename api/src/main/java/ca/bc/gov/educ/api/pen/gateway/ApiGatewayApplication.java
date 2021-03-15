@@ -41,12 +41,10 @@ public class ApiGatewayApplication {
   @Autowired
   public RouteLocator myRoutes(RouteLocatorBuilder builder, RedisRateLimiter redisRateLimiter,
                                ApplicationProperties applicationProperties) {
-    log.info("building routes");
     return builder.routes()
         .route("student_api_v1_route", r -> r
             .path("/api/v1/student/**")
-            .filters(f ->
-                f.requestRateLimiter(c -> c.setRateLimiter(redisRateLimiter)))
+            .filters(f ->f.requestRateLimiter(c -> c.setRateLimiter(redisRateLimiter)))
             .uri(applicationProperties.getStudentAPIURLV1()))
 
         .build();
