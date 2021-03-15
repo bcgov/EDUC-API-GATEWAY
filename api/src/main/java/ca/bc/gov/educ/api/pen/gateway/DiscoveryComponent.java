@@ -19,7 +19,6 @@ public class DiscoveryComponent {
 
   @PostConstruct
   public void init(){
-    log.info("init");
     this.discoveryClient.getServices().forEach(log::info);
   }
 }
